@@ -45,7 +45,6 @@ public class Diario
             JsonSerializer.Deserialize<List<Registro>>(json)
             ?? throw new JsonException("O arquivo não contém uma lista de registros.");
 
-        // Valida antes de substituir os registros atuais.
         foreach (Registro registro in registrosCarregados)
         {
             if (registro == null ||
