@@ -4,7 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Para superar os requisitos básicos, o programa mantém um registro
+        // de quantas vezes cada tipo de atividade foi realizado durante a sessão.
+        // Ao sair, o usuário recebe um resumo mostrando a quantidade de atividades
+        // de respiração, reflexão e listagem concluídas, além do total realizado.
+
         string opcao = "";
+
+        int totalRespiracao = 0;
+        int totalReflexao = 0;
+        int totalListagem = 0;
 
         while (opcao != "4")
         {
@@ -26,6 +35,8 @@ class Program
                     new AtividadeRespiracao();
 
                 atividade.Executar();
+
+                totalRespiracao++;
             }
             else if (opcao == "2")
             {
@@ -33,6 +44,8 @@ class Program
                     new AtividadeReflexao();
 
                 atividade.Executar();
+
+                totalReflexao++;
             }
             else if (opcao == "3")
             {
@@ -40,10 +53,35 @@ class Program
                     new AtividadeListagem();
 
                 atividade.Executar();
+
+                totalListagem++;
             }
             else if (opcao == "4")
             {
-                Console.WriteLine("\nObrigado por utilizar o programa!");
+                int totalAtividades =
+                    totalRespiracao + totalReflexao + totalListagem;
+
+                Console.WriteLine("\nResumo da sua sessão:\n");
+
+                Console.WriteLine(
+                    $"Atividade de Respiração: {totalRespiracao} vez(es)"
+                );
+
+                Console.WriteLine(
+                    $"Atividade de Reflexão: {totalReflexao} vez(es)"
+                );
+
+                Console.WriteLine(
+                    $"Atividade de Listagem: {totalListagem} vez(es)"
+                );
+
+                Console.WriteLine(
+                    $"\nTotal de atividades realizadas: {totalAtividades}"
+                );
+
+                Console.WriteLine(
+                    "\nObrigado por utilizar o programa!"
+                );
             }
             else
             {
