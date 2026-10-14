@@ -1,0 +1,4 @@
+0
+Simples|Ler a biblia|todos os dias|50|False
+Eterna|ler o livro de morman|todos os dias|50
+Checklist|ia a igreja|todos os domingos|100|5|150|0
